@@ -2,42 +2,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { CustomerComponent } from './customer/customer.component';
-import { ContractComponent } from './contract/contract.component';
-import { FacilityComponent } from './facility/facility.component';
-import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
-import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
-import { FacilityListComponent } from './facility/facility-list/facility-list.component';
-import { FacilityCreateComponent } from './facility/facility-create/facility-create.component';
-import { FacilityEditComponent } from './facility/facility-edit/facility-edit.component';
-import { ContractListComponent } from './contract/contract-list/contract-list.component';
-import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
-import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
-import {CustomerListComponent} from './customer/customer-list/customer-list.component';
+import { HomeComponent } from './home/home.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HeaderComponent} from './header/header.component';
+import {FooterComponent} from './footer/footer.component';
+import {FacilityListComponent} from './facilitys/facility-list/facility-list.component';
+import {FacilityEditComponent} from './facilitys/facility-edit/facility-edit.component';
+import {FacilityCreateComponent} from './facilitys/facility-create/facility-create.component';
+import {CustomerListComponent} from './customers/customer-list/customer-list.component';
+import {CustomerCreateComponent} from './customers/customer-create/customer-create.component';
+import {CustomerEditComponent} from './customers/customer-edit/customer-edit.component';
+import {ContractListComponent} from './contracts/contract-list/contract-list.component';
+import {ContractCreateComponent} from './contracts/contract-create/contract-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     FooterComponent,
-    CustomerComponent,
-    ContractComponent,
-    FacilityComponent,
-    CustomerEditComponent,
-    CustomerCreateComponent,
     FacilityListComponent,
-    FacilityCreateComponent,
     FacilityEditComponent,
+    FacilityCreateComponent,
+    CustomerListComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
     ContractListComponent,
-    ContractEditComponent,
-    ContractCreateComponent,
-    CustomerListComponent
+    ContractCreateComponent
   ],
   imports: [
-    BrowserModule
-  ],
+    BrowserModule,
+    AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
