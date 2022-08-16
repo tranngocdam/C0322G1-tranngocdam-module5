@@ -18,16 +18,15 @@ export class CalculatorComponent implements OnInit {
     switch (operator) {
       case '+':
          return this.result = this.number1 + this.number2;
-         break;
       case '-':
          return this.result = this.number1 - this.number2;
-         break;
       case '*':
          return this.result = this.number1 * this.number2;
-         break;
       case '/':
+        if(this.number2==0){
+          return this.result=null;
+        }
          return this.result = this.number1 / this.number2;
-         break;
     }
   }
 }

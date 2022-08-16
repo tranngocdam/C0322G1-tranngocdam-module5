@@ -1,0 +1,6 @@
+{{like}} likes. <button (click)="likeThis()">Like</button>
+Trong file article.component.html sửa lại đoạn code thành như sau:
+
+<div *ngFor="let art of articles">
+  <a href="{{art.url}}" target="_blank">{{art.title}}</a>: <app-like></app-like>
+</div>
