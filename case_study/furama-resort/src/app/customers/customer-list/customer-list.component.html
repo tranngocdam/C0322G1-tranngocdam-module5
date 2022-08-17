@@ -39,7 +39,10 @@
             <td>{{i+1}}</td>
             <td>{{c.name}}</td>
             <td>{{c.dayOfBirth}}</td>
-            <td>{{c.gender}}</td>
+            <td>
+              <span *ngIf="c.gender == true; else elseBlock">Female</span>
+              <ng-template #elseBlock>Male</ng-template>
+            </td>
             <td>{{c.idCard}}</td>
             <td>{{c.phoneNumber}}</td>
             <td>{{c.email}}</td>
