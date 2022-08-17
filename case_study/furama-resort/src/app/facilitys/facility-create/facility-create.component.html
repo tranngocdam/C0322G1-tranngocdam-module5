@@ -1,9 +1,10 @@
 <div class="container-fuild">
   <div class="row" style="display: flex">
     <div style="width: 20%"></div>
-    <div style="width: 60%"  >
+    <div style="width: 60%">
       <h2 style="text-align: center">Create facility</h2>
-      <table class="table table-striped">
+      <table class="table table-info table-hover">
+        <thead>
         <tr>
           <th><label>Facility type</label></th>
           <td><select class="form-select">
@@ -64,10 +65,11 @@
         </tr>
         <tr>
           <td>
-            <input class="btn btn-success" type="submit" value="Save">
-            <a class="btn btn-secondary">Back</a>
+            <input class="btn btn-success" type="submit" [routerLink]="['/facility-list']" value="Save">
+            <a class="btn btn-secondary" [routerLink]="['/facility-list']">Back</a>
           </td>
         </tr>
+        </thead>
       </table>
     </div>
     <div style="width: 20%"></div>
