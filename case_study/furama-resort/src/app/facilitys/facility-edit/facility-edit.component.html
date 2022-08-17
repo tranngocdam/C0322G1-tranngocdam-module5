@@ -4,6 +4,7 @@
     <form>
       <div class="container">
         <table class="table table-striped">
+          <>
           <tr hidden>
             <th><label>Id</label></th>
             <td><input class="form-control" type="text"></td>
@@ -60,9 +61,10 @@
           <tr>
             <td>
               <input class="btn btn-success" type="submit" value="Save">
-              <a class="btn btn-secondary">Back</a>
+              <a class="btn btn-secondary" [routerLink]="['/facility-list']">Back</a>
             </td>
           </tr>
+          </thead>
         </table>
       </div>
     </form>

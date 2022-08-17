@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {FacilityListComponent} from './facilitys/facility-list/facility-list.component';
@@ -11,7 +11,6 @@ import {CustomerEditComponent} from './customers/customer-edit/customer-edit.com
 import {ContractListComponent} from './contracts/contract-list/contract-list.component';
 import {ContractCreateComponent} from './contracts/contract-create/contract-create.component';
 
-
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
@@ -22,13 +21,12 @@ const routes: Routes = [
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'customer-edit', component: CustomerEditComponent},
   {path: 'contract-list', component: ContractListComponent},
-  {path: 'contract-create', component: ContractCreateComponent}
+  {path: 'contract-create', component: ContractCreateComponent},
 ];
-
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    // CommonModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
