@@ -3,17 +3,30 @@
     <div style="width: 20%"></div>
     <div style="width: 60%">
       <h1 class="text-center my-5">Create Contract</h1>
-      <form>
+      <form [formGroup]="contractFrom" ]>
         <div class="container">
           <table class="table table-striped">
             <thead>
             <tr>
+              <th><label>Code</label></th>
+              <td>
+                <input class="form-control" type="date">
+                <p *ngIf="contractFrom.controls.code.hasError('required') &&  contractFrom.controls.code.touched">Không để trống</p>
+              </td>
+            </tr>
+            <tr>
               <th><label>Day start</label></th>
-              <td><input class="form-control" type="date"></td>
+              <td>
+                <input class="form-control" type="date">
+                <p *ngIf="contractFrom.controls.dayStart.hasError('required') &&  contractFrom.controls.dayStart.touched">Không để trống</p>
+              </td>
             </tr>
             <tr>
               <th><label>Day end</label></th>
-              <td><input class="form-control" type="date"></td>
+              <td>
+                <input class="form-control" type="date">
+                <p *ngIf="contractFrom.controls.dayEnd.hasError('required') &&  contractFrom.controls.dayEnd.touched">Không để trống</p>
+              </td>
             </tr>
             <tr>
               <th><label>Deposits</label></th>
@@ -22,12 +35,6 @@
             <tr>
               <th><label>Total money</label></th>
               <td><input class="form-control" type="text"></td>
-            </tr>
-            <tr>
-              <th><label>Employee</label></th>
-              <td><select class="form-select">
-                <option></option>
-              </select></td>
             </tr>
             <tr>
               <th><label>Customer</label></th>

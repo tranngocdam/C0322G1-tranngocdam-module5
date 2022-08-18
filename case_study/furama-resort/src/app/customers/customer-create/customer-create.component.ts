@@ -22,7 +22,4 @@ export class CustomerCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  submit() {
-    alert('okoko');
-  }
 }

@@ -16,6 +16,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   private getAll() {
-    this.customers=this.CustomerService.getAll();
+    this.customers = this.CustomerService.getAll();
   }
 }
