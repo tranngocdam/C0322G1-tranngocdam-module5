@@ -40,8 +40,8 @@
             <td>{{c.name}}</td>
             <td>{{c.dayOfBirth}}</td>
             <td>
-              <span *ngIf="c.gender == true; else elseBlock">Female</span>
-              <ng-template #elseBlock>Male</ng-template>
+              <span *ngIf="c.gender == true; else elseBlock">Nam</span>
+              <ng-template #elseBlock>Nữ</ng-template>
             </td>
             <td>{{c.idCard}}</td>
             <td>{{c.phoneNumber}}</td>
@@ -78,48 +78,6 @@
                 </div>
               </div>
             </td>
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>2</td>-->
-<!--            <td>Thanh Trí</td>-->
-<!--            <td>1995-08-12</td>-->
-<!--            <td>Nữ</td>-->
-<!--            <td>230004234</td>-->
-<!--            <td>09000000</td>-->
-<!--            <td>tri12@gmail.com</td>-->
-<!--            <td>193 Nguyễn Lương Bằng, Đà Nẵng</td>-->
-<!--            <td>Normal</td>-->
-<!--            <td>-->
-<!--              <button class="btn btn-warning" [routerLink]="['/customer-edit']">Edit</button>-->
-<!--            </td>-->
-<!--            <td>-->
-<!--              <button type="button" class="btn btn-primary" data-bs-toggle="modal"-->
-<!--                      data-bs-target="#deleteModal">-->
-<!--                Delete-->
-<!--              </button>-->
-
-<!--              &lt;!&ndash; Modal &ndash;&gt;-->
-<!--              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"-->
-<!--                   aria-hidden="true">-->
-<!--                <div class="modal-dialog">-->
-<!--                  <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                      <h5 class="modal-title" id="exampleModalLabel">Delete</h5>-->
-<!--                      <button type="button" class="btn-close" data-bs-dismiss="modal"-->
-<!--                              aria-label="Close"></button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                      Do you want delete customer Thanh Trí?-->
-<!--                    </div>-->
-<!--                    <div class="modal-footer">-->
-<!--                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                      <a type="submit" class="btn btn-danger">Delete</a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </td>-->
-<!--          </tr>-->
           </thead>
         </table>
       </div>

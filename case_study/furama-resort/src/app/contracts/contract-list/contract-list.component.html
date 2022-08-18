@@ -3,7 +3,7 @@
     <div class="row">
       <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: lemonchiffon">
         <div class="container-fluid">
-          <a class="btn btn-primary" href="javascript:void(0)">Create contract</a>
+          <a class="btn btn-primary" [routerLink]="['/contract-create']">Create contract</a>
           <h2 class="listfacitity">LIST CONTRACT</h2>
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar me-auto">
@@ -34,7 +34,7 @@
             <th colspan="2">Attach service</th>
           </tr>
           <tr *ngFor = "let c of contracts; index as i">
-            <td>{{i}}</td>
+            <td>{{i+1}}</td>
             <td>{{c.facilityId.name}}</td>
             <td>{{c.customerId.name}}</td>
             <td>{{c.dayStart}}</td>
@@ -53,12 +53,27 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                      <h5 class="modal-title" id="exampleModalLabel"></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal"
                               aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-
+                      <form>
+                        <div class="container">
+                          <table class="table table-striped">
+                            <tr>
+                              <td><label>Attach Facility</label></td>
+                              <td><select class="form-select">
+                                <option></option>
+                              </select></td>
+                            </tr>
+                            <tr>
+                              <td><label>Quantity</label></td>
+                              <td><input class="form-control" type="text"></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
@@ -86,7 +101,22 @@
                               aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                      Do you want delete Villa POOL VILLAS?
+                      <form>
+                        <div class="container">
+                          <table class="table table-striped">
+                            <tr>
+                              <td><label>Attach Facility</label></td>
+                              <td><select class="form-select">
+                                <option></option>
+                              </select></td>
+                            </tr>
+                            <tr>
+                              <td><label>Quantity</label></td>
+                              <td><input class="form-control" type="text"></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close

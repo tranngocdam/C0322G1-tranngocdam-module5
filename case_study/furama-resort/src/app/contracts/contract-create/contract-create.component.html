@@ -8,45 +8,93 @@
           <table class="table table-striped">
             <thead>
             <tr>
-              <td><label>Day start</label></td>
+              <th><label>Day start</label></th>
               <td><input class="form-control" type="date"></td>
             </tr>
             <tr>
-              <td><label>Day end</label></td>
+              <th><label>Day end</label></th>
               <td><input class="form-control" type="date"></td>
             </tr>
             <tr>
-              <td><label>Deposits</label></td>
+              <th><label>Deposits</label></th>
               <td><input class="form-control" type="text"></td>
             </tr>
             <tr>
-              <td><label>Total money</label></td>
+              <th><label>Total money</label></th>
               <td><input class="form-control" type="text"></td>
             </tr>
             <tr>
-              <td><label>Employee</label></td>
+              <th><label>Employee</label></th>
               <td><select class="form-select">
                 <option></option>
               </select></td>
             </tr>
             <tr>
-              <td><label>Customer</label></td>
+              <th><label>Customer</label></th>
               <td><select class="form-select">
                 <option>
                 </option>
               </select></td>
             </tr>
             <tr>
-              <td><label>Facility</label></td>
+              <th><label>Facility</label></th>
               <td><select class="form-select">
                 <option>
                 </option>
               </select></td>
+            </tr>
+            <tr>
+            <tr>
+              <th><label>Attach facility</label></th>
+              <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                  +
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Create contract detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="container">
+                            <table class="table table-striped">
+                              <tr>
+                                <td><label>Attach Facility</label></td>
+                                <td><select class="form-select">
+                                  <option></option>
+                                </select></td>
+                              </tr>
+                              <tr>
+                                <td><label>Quantity</label></td>
+                                <td><input class="form-control" type="text"></td>
+                              </tr>
+                            </table>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>
-                <input type="submit" class="btn btn-success" value="Save">
-                <a class="btn btn-secondary">Back</a>
+                <input type="submit" class="btn btn-success"  value="Save" >
+                <a class="btn btn-secondary" [routerLink]="['/contract-list']">Back</a>
               </td>
             </tr>
             </thead>
