@@ -3,7 +3,7 @@
     <div style="width: 20%"></div>
     <div style="width: 60%">
       <h2 class="text-center my-5">Create customer</h2>
-      <form [formGroup]="cusomterValilator">
+<!--      <form [formGroup]="cusomterValilator">-->
         <div class="container">
           <table class="table table-info table-hover">
             <thead>
@@ -11,19 +11,16 @@
               <th><label>Name</label></th>
               <td>
                 <input class="form-control" type="text">
-                <p *ngIf="cusomterValilator.controls.name.hasError('required') &&
-                cusomterValilator.controls.name.touched">Không được để trống</p>
-                <p *ngIf="cusomterValilator.controls.name.hasError('pattern') &&
-                cusomterValilator.controls.name.touched">Không đúng định dạng</p>
+<!--                <p *ngIf="cusomterValilator.controls.name.hasError('required') && cusomterValilator.controls.name.touched">Không được để trống</p>-->
+<!--                <p *ngIf="cusomterValilator.controls.name.hasError('pattern') && cusomterValilator.controls.name.touched">Không đúng định dạng</p>-->
               </td>
             </tr>
             <tr>
               <th><label>Day of birth</label></th>
               <td>
                 <input class="form-control" type="date">
-                <p
-                  *ngIf="cusomterValilator.controls.dayOfBirth.hasError('required') && cusomterValilator.controls.dayOfBirth.touched">
-                  Không được để trống</p>
+<!--                <p *ngIf="cusomterValilator.controls.dayOfBirth.hasError('required') && cusomterValilator.controls.dayOfBirth.touched">-->
+<!--                  Không được để trống</p>-->
               </td>
             </tr>
             <tr>
@@ -32,51 +29,49 @@
                 <option value="true">Nam</option>
                 <option value="false">Nữ</option>
               </select>
-                <p *ngIf="cusomterValilator.controls.gender.hasError('required') && cusomterValilator.controls.gender.touched">
-                Không được để trống</p>
+<!--                <p *ngIf="cusomterValilator.controls.gender.hasError('required') && cusomterValilator.controls.gender.touched">-->
+<!--                Không được để trống</p>-->
               </td>
             </tr>
             <tr>
               <th><label>Id card</label></th>
               <td>
                 <input class="form-control" type="text">
-                <p
-                  *ngIf="cusomterValilator.controls.idCard.hasError('required') && cusomterValilator.controls.idCard.touched">
-                  Không được để trống</p>
-                <p
-                  *ngIf="cusomterValilator.controls.idCard.hasError('pattern') && cusomterValilator.controls.idCard.touched">
-                  Không đúng định dạng</p>
+<!--                <p *ngIf="cusomterValilator.controls.idCard.hasError('required') && cusomterValilator.controls.idCard.touched">-->
+<!--                  Không được để trống</p>-->
+<!--                <p *ngIf="cusomterValilator.controls.idCard.hasError('pattern') && cusomterValilator.controls.idCard.touched">-->
+<!--                  Không đúng định dạng</p>-->
               </td>
 
             </tr>
             <tr>
               <th><label>Number phone</label></th>
               <td><input class="form-control" type="text">
-                <p
-                  *ngIf="cusomterValilator.controls.numberPhone.hasError('required') && cusomterValilator.controls.numberPhone.touched">
-                  Không được để trống</p>
-                <p
-                  *ngIf="cusomterValilator.controls.numberPhone.hasError('pattern') && cusomterValilator.controls.numberPhone.touched">
-                  Không đúng định dạng</p>
+<!--                <p-->
+<!--                  *ngIf="cusomterValilator.controls.numberPhone.hasError('required') && cusomterValilator.controls.numberPhone.touched">-->
+<!--                  Không được để trống</p>-->
+<!--                <p-->
+<!--                  *ngIf="cusomterValilator.controls.numberPhone.hasError('pattern') && cusomterValilator.controls.numberPhone.touched">-->
+<!--                  Không đúng định dạng</p>-->
               </td>
             </tr>
             <tr>
               <th><label>Email</label></th>
               <td><input class="form-control" type="text">
-                <p
-                  *ngIf="cusomterValilator.controls.email.hasError('required') && cusomterValilator.controls.email.touched">
-                  Không được để trống</p>
-                <p
-                  *ngIf="cusomterValilator.controls.email.hasError('pattern') && cusomterValilator.controls.email.touched">
-                  Không đúng định dạng</p>
+<!--                <p-->
+<!--                  *ngIf="cusomterValilator.controls.email.hasError('required') && cusomterValilator.controls.email.touched">-->
+<!--                  Không được để trống</p>-->
+<!--                <p-->
+<!--                  *ngIf="cusomterValilator.controls.email.hasError('pattern') && cusomterValilator.controls.email.touched">-->
+<!--                  Không đúng định dạng</p>-->
               </td>
             </tr>
             <tr>
               <th><label>Address</label></th>
               <td><input class="form-control" type="text">
-                <p
-                  *ngIf="cusomterValilator.controls.address.hasError('required') && cusomterValilator.controls.address.touched">
-                  Không được để trống</p>
+<!--                <p-->
+<!--                  *ngIf="cusomterValilator.controls.address.hasError('required') && cusomterValilator.controls.address.touched">-->
+<!--                  Không được để trống</p>-->
               </td>
             </tr>
             <tr>
@@ -98,7 +93,7 @@
             </thead>
           </table>
         </div>
-      </form>
+<!--      </form>-->
     </div>
     <div style="width: 20%"></div>
   </div>

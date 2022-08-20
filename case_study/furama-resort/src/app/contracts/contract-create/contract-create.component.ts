@@ -9,14 +9,14 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./contract-create.component.css']
 })
 export class ContractCreateComponent implements OnInit {
-  contractFrom = new FormGroup({
-    code: new FormControl('', [Validators.required]),
-    customerId: new FormControl('', [Validators.required]),
-    facilityId: new FormControl('', [Validators.required]),
-    startDate: new FormControl('', [Validators.required]),
-    endDate: new FormControl('', [Validators.required]),
-    deposit: new FormControl('', [Validators.required])
-  });
+  // contractFrom = new FormGroup({
+  //   code: new FormControl('', [Validators.required]),
+  //   customerId: new FormControl('', [Validators.required]),
+  //   facilityId: new FormControl('', [Validators.required]),
+  //   startDate: new FormControl('', [Validators.required]),
+  //   endDate: new FormControl('', [Validators.required]),
+  //   deposit: new FormControl('', [Validators.required])
+  // });
 
   constructor() { }
 

@@ -2,7 +2,7 @@
   <div class="row" style="display: flex">
     <div style="width: 20%"></div>
     <div style="width: 60%">
-      <form [formGroup]="serviceForm" >
+<!--      <form [formGroup]="serviceForm" >-->
         <h2 style="text-align: center">Create facility</h2>
         <table class="table table-info table-hover">
           <thead>
@@ -18,28 +18,28 @@
           <tr>
             <th><label>Name</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.dayEnd.hasError('required') &&  serviceForm.controls.dayEnd.touched">Không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.dayEnd.hasError('required') &&  serviceForm.controls.dayEnd.touched">Không để trống</p>-->
             </td>
           </tr>
           <tr>
             <th><label>Area</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.area.hasError('pattern') &&  serviceForm.controls.area.touched">không hợp lệ</p>
-              <p *ngIf="serviceForm.controls.area.hasError('required') &&  serviceForm.controls.area.touched">không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.area.hasError('pattern') &&  serviceForm.controls.area.touched">không hợp lệ</p>-->
+<!--              <p *ngIf="serviceForm.controls.area.hasError('required') &&  serviceForm.controls.area.touched">không để trống</p>-->
             </td>
           </tr>
           <tr>
             <th><label>Cost</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.cost.hasError('pattern') &&  serviceForm.controls.cost.touched">không hợp lệ</p>
-              <p *ngIf="serviceForm.controls.cost.hasError('required') &&  serviceForm.controls.cost.touched">không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.cost.hasError('pattern') &&  serviceForm.controls.cost.touched">không hợp lệ</p>-->
+<!--              <p *ngIf="serviceForm.controls.cost.hasError('required') &&  serviceForm.controls.cost.touched">không để trống</p>-->
             </td>
           </tr>
           <tr>
             <th><label>Max people</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.maxPeople.hasError('pattern') &&  serviceForm.controls.maxPeople.touched">không hợp lệ</p>
-              <p *ngIf="serviceForm.controls.maxPeople.hasError('required') &&  serviceForm.controls.maxPeople.touched"> không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.maxPeople.hasError('pattern') &&  serviceForm.controls.maxPeople.touched">không hợp lệ</p>-->
+<!--              <p *ngIf="serviceForm.controls.maxPeople.hasError('required') &&  serviceForm.controls.maxPeople.touched"> không để trống</p>-->
             </td>
 
           </tr>
@@ -56,33 +56,33 @@
           <tr>
             <th><label>Facility free</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.facilityFree.hasError('required') &&  serviceForm.controls.facilityFree.touched">không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.facilityFree.hasError('required') &&  serviceForm.controls.facilityFree.touched">không để trống</p>-->
             </td>
           </tr>
           <tr>
             <th><label>Number of floors</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.facilityFree.hasError('required') &&  serviceForm.controls.numberOfFloors.touched">không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.facilityFree.hasError('required') &&  serviceForm.controls.numberOfFloors.touched">không để trống</p>-->
             </td>
 
           </tr>
           <tr>
             <th><label>Standard room</label></th>
             <td><input class="form-select">
-              <p *ngIf="serviceForm.controls.standardRoom.hasError('required') &&  serviceForm.controls.standarRoom.touched">không để trống</p></td>
+<!--              <p *ngIf="serviceForm.controls.standardRoom.hasError('required') &&  serviceForm.controls.standarRoom.touched">không để trống</p></td>-->
 
           </tr>
           <tr>
             <th><label>Description Other Convenience</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.descriptionOtherConvenience.hasError('required') &&  serviceForm.controls.descriptionOtherConvenience.touched">không để trống</p>
+<!--              <p *ngIf="serviceForm.controls.descriptionOtherConvenience.hasError('required') &&  serviceForm.controls.descriptionOtherConvenience.touched">không để trống</p>-->
             </td>
           </tr>
           <tr>
             <th><label>Pool area</label></th>
             <td><input class="form-control" type="text">
-              <p *ngIf="serviceForm.controls.poolArea.hasError('pattern') &&  serviceForm.controls.poolArea.touched">không hợp lệ</p>
-              <p *ngIf="serviceForm.controls.poolArea.hasError('required') &&  serviceForm.controls.poolArea.touched"> không để trống</p></td>
+<!--              <p *ngIf="serviceForm.controls.poolArea.hasError('pattern') &&  serviceForm.controls.poolArea.touched">không hợp lệ</p>-->
+<!--              <p *ngIf="serviceForm.controls.poolArea.hasError('required') &&  serviceForm.controls.poolArea.touched"> không để trống</p></td>-->
           </tr>
           <tr>
             <td>
@@ -92,7 +92,7 @@
           </tr>
           </thead>
         </table>
-      </form>
+<!--      </form>-->
     </div>
     <div style="width: 20%"></div>
   </div>
