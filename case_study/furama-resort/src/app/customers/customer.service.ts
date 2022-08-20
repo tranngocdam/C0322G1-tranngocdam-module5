@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Customer} from '../../model/customer/Customer';
+import { Injectable } from '@angular/core';
+import {Customer} from './customer';
 
 @Injectable({
   providedIn: 'root'
@@ -36,13 +36,9 @@ export class CustomerService {
     phoneNumber: '0912000122',
     address: '11 Phạm Như Xương'
   }];
-
-  constructor() {
-  }
+  constructor() { }
 
   getAll() {
     return this.customers;
   }
 }
-
-

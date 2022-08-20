@@ -1,5 +1,5 @@
-import {Customer} from '../customer/Customer';
-import {Facility} from '../facility/Facility';
+import {Customer} from './Customer';
+import {Facility} from './Facility';
 
 export interface Contract {
   id ?: number;

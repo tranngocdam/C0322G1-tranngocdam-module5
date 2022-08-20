@@ -1,4 +1,4 @@
-import {CustomerType} from './CustomerType';
+import {CustomerType} from '../customers/CustomerType';
 
 export interface Customer {
   id ?: number;
