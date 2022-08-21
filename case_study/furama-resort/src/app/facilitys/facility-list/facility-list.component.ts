@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Facility} from '../../model/Facility';
-import {FacilityService} from '../../service/facility.service';
+import {Facility} from '../Facility';
+import {FacilityService} from '../facility.service';
 
 @Component({
   selector: 'app-facility-list',
@@ -8,16 +8,16 @@ import {FacilityService} from '../../service/facility.service';
   styleUrls: ['./facility-list.component.css']
 })
 export class FacilityListComponent implements OnInit {
-  facilitys: Facility[] = [];
+  facility: Facility[] = [];
 
-  constructor(private FacilityService: FacilityService) {
+  constructor(private facilityService: FacilityService) {
   }
 
   ngOnInit(): void {
     this.getAll();
   }
 
-  private getAll() {
-    this.facilitys = this.FacilityService.getAll();
+  getAll() {
+    this.facility = this.facilityService.getAll();
   }
 }

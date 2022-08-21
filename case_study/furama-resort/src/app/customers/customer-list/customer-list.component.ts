@@ -9,14 +9,17 @@ import {CustomerService} from '../customer.service';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-    customers: Customer[] = [];
+  customers: Customer[] = [];
   constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {
     this.getAll();
+    // this.loadList();
   }
-
    getAll() {
     this.customers = this.customerService.getAll();
   }
+  // loadList() {
+  //   this.customers = this.customerService.loadList();
+  // }
 }

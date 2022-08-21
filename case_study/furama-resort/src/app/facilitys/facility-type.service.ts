@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import {CustomerType} from '../model/CustomerType';
+import {FacilityType} from './FacilityType';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityTypeService {
-  customerTypes: CustomerType[] = [{
+  facilityTypes: FacilityType[] = [{
     id: 1 , name: 'Room'
   }, {
     id: 2 , name: 'House'
   }, {
     id: 3, name: 'Villa'
   }];
+  getAll() {
+    return this.facilityTypes;
+  }
   constructor() { }
 }

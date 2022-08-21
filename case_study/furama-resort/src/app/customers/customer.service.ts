@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Customer} from './customer';
+import {CustomerType} from './customerType';
 
 @Injectable({
   providedIn: 'root'
@@ -35,10 +36,48 @@ export class CustomerService {
     email: 'hiep98@gmail.com',
     phoneNumber: '0912000122',
     address: '11 Phạm Như Xương'
+  }, {
+    id: 4,
+    name: 'Minh Nhí',
+    dayOfBirth: '1999-06-08',
+    gender: false,
+    customerTypeId: {id: 1, name: 'Diamond'},
+    idCard: '676575500',
+    email: 'nhi999@gmail.com',
+    phoneNumber: '0912000000',
+    address: '08 Phạm Hùng'
   }];
-  constructor() { }
+
+  constructor() {
+  }
 
   getAll() {
     return this.customers;
+  }
+  // loadList() {
+  //   return this.customers;
+  // }
+  saveCustomer(customer) {
+    this.customers.push(customer);
+  }
+  findById(id: number) {
+    return this.customers.find(customer => customer.id === id);
+  }
+  deleteCustomer(id: number) {
+    for (let i = 0; i < this.customers.length; i++) {
+      if (this.customers[i].id === id) {
+        this.customers.splice(i, 1);
+      }
+    }
+  }
+  updateCustomer(customer) {
+    this.customers.find(c => c.id === customer.id).name = customer.name;
+    this.customers.find(c => c.id === customer.id).customerTypeId  = customer.customerTypeId ;
+    this.customers.find(c => c.id === customer.id).dayOfBirth = customer.dayOfBirth;
+    this.customers.find(c => c.id === customer.id).gender = customer.gender;
+    this.customers.find(c => c.id === customer.id).idCard = customer.idCard;
+    this.customers.find(c => c.id === customer.id).phoneNumber = customer.phoneNumber;
+    this.customers.find(c => c.id === customer.id).email = customer.email;
+    this.customers.find(c => c.id === customer.id).address = customer.address;
   }
 }

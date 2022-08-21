@@ -21,7 +21,7 @@
   <div class="container-fuild" style="display: flex">
     <div style="width: 10%"></div>
     <div class="row" style="width: 80% ;display: flex;justify-content: space-between;flex-wrap: wrap">
-      <div class="card" style="width:33%" *ngFor="let f of facilitys">
+      <div class="card" style="width:33%" *ngFor="let f of facility">
         <img [src]="f.img">
         <div class="card-body">
           <h5 class="card-title" style="text-align: center">{{f.name}}</h5>
@@ -62,40 +62,13 @@
               <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="mynavbar1">
                   <li class="nav-item">
-                    <a [routerLink]="['/facility-edit']" class="btn btn-warning">Edit</a>
+                    <a [routerLink]="['/facilitys/facility-edit', f.id]" class="btn btn-warning">Edit</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active"></a>
                   </li>
                   <li class="nav-item">
-                    <a>
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                              data-bs-target="#deleteModal">
-                        Delete
-                      </button>
-
-                      <!-- Modal -->
-                      <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                           aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              Do you want delete Room OCEAN SUITE?
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
-                              </button>
-                              <a type="submit" class="btn btn-danger">Delete</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
+                    <a class="btn btn-danger" [routerLink]="['/facilitys/facility-delete',f.id]">Delete</a>
                   </li>
                 </div>
               </div>

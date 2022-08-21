@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Facility} from '../model/Facility';
+import {Facility} from './Facility';
+import {RentType} from './RentType';
+import {FacilityType} from './FacilityType';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityService {
-  facility: Facility[] = [{
+  facilitys: Facility[] = [{
     id : 1,
     name : 'OCEAN STUDIO SUITE',
     area : '65.5m2',
@@ -106,6 +108,33 @@ export class FacilityService {
   }];
   constructor() { }
   getAll() {
-    return this.facility;
+    return this.facilitys;
+  }
+  saveFacility(facility) {
+    this.facilitys.push(facility);
+  }
+  findById(id: number) {
+    return this.facilitys.find(facility => facility.id === id);
+  }
+  deleteFacility(id: number) {
+    for (let i = 0; i < this.facilitys.length; i++) {
+      if (this.facilitys[i].id === id) {
+        this.facilitys.splice(i, 1);
+      }
+    }
+  }
+  updateFacility(facility) {
+    this.facilitys.find(f => f.id === facility.id).name = facility.name;
+    this.facilitys.find(f => f.id === facility.id).area = facility.area;
+    this.facilitys.find(f => f.id === facility.id).cost = facility.cost;
+    this.facilitys.find(f => f.id === facility.id).maxPeople = facility.maxPeople;
+    this.facilitys.find(f => f.id === facility.id).rentTypeId = facility.rentTypeId;
+    this.facilitys.find(f => f.id === facility.id).facilityTypeId = facility.facilityTypeId;
+    this.facilitys.find(f => f.id === facility.id).descriptionOtherConvenience = facility.descriptionOtherConvenience;
+    this.facilitys.find(f => f.id === facility.id).poolArea = facility.poolArea;
+    this.facilitys.find(f => f.id === facility.id).numberOfFloods = facility.numberOfFloods;
+    this.facilitys.find(f => f.id === facility.id).facilityFree = facility.facilityFree;
+    this.facilitys.find(f => f.id === facility.id).standardRoom = facility.standardRoom;
+    this.facilitys.find(f => f.id === facility.id).img = facility.img;
   }
 }

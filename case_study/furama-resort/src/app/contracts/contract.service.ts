@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Contract} from '../model/Contract';
+import {Contract} from './Contract';
+
 
 @Injectable({
   providedIn: 'root'

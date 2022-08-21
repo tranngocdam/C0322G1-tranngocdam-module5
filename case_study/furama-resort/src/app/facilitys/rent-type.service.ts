@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {CustomerType} from '../model/CustomerType';
-import {RentType} from '../model/RentType';
+import {RentType} from './RentType';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +14,8 @@ export class RentTypeService {
   }, {
     id: 4, name: 'hour'
   }];
+  getAll() {
+    return this.rentTypes;
+  }
   constructor() { }
 }
