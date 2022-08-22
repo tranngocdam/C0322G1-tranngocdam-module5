@@ -1,0 +1,50 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "iphone"
+    },
+    {
+      "id": 2,
+      "name": "samsung"
+    },
+    {
+      "id": 3,
+      "name": "oppo"
+    },
+    {
+      "name": "lg",
+      "id": 4
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "XSmax",
+      "price": 340000,
+      "description": "99%",
+      "category": {
+        "id": 1,
+        "name": "iphone"
+      }
+    },
+    {
+      "name": "S9+",
+      "price": 898555,
+      "description": "100%",
+      "category": {
+        "id": "2",
+        "name": "samsung"
+      }
+    },
+    {
+      "name": "12pro",
+      "price": 1201121,
+      "description": "đẹp",
+      "category": {
+        "id": "1",
+        "name": "iphone"
+      }
+    }
+  ]
+}

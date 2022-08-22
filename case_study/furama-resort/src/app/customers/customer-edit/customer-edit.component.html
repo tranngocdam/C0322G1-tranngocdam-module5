@@ -39,7 +39,7 @@
         </tr>
         <tr>
           <th><label>Customer type</label></th>
-          <td><select class="form-select">
+          <td><select class="form-select" formControlName="customerTypeid">
             <option *ngFor="let ct of customerType" [ngValue]="ct">{{ct.name}}</option>
           </select></td>
         </tr>

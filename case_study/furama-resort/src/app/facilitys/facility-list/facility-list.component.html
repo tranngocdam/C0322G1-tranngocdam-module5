@@ -22,7 +22,7 @@
     <div style="width: 10%"></div>
     <div class="row" style="width: 80% ;display: flex;justify-content: space-between;flex-wrap: wrap">
       <div class="card" style="width:33%" *ngFor="let f of facility">
-        <img [src]="f.img">
+        <img [src]="f.img" width="370" height="239">
         <div class="card-body">
           <h5 class="card-title" style="text-align: center">{{f.name}}</h5>
           <nav class="navbar navbar-expand-sm navbar-dark">
@@ -68,7 +68,31 @@
                     <a class="nav-link active"></a>
                   </li>
                   <li class="nav-item">
-                    <a class="btn btn-danger" [routerLink]="['/facilitys/facility-delete',f.id]">Delete</a>
+<!--                    <a class="btn btn-danger" [routerLink]="['/facilitys/facility-delete',f.id]">Delete</a>-->
+                    <button (click)="getModal(f.id,f.name)" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal">
+                      Delete
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete customer</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Do you want delete customer <span>{{nameModal}}</span> with id {{idModal}} ?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a class="btn btn-danger" data-bs-dismiss="modal" [routerLink]="['/facilitys/facility-delete',idModal]">Delete</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </li>
                 </div>
               </div>

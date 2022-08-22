@@ -25,5 +25,4 @@ export class CustomerListComponent implements OnInit {
     this.idModal = id;
     this.nameModal = name;
   }
-
 }

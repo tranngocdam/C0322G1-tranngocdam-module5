@@ -9,7 +9,8 @@ import {FacilityService} from '../facility.service';
 })
 export class FacilityListComponent implements OnInit {
   facility: Facility[] = [];
-
+  idModal: number;
+  nameModal: string;
   constructor(private facilityService: FacilityService) {
   }
 
@@ -19,5 +20,9 @@ export class FacilityListComponent implements OnInit {
 
   getAll() {
     this.facility = this.facilityService.getAll();
+  }
+  getModal(id: number, name: string) {
+    this.idModal = id;
+    this.nameModal = name ;
   }
 }
