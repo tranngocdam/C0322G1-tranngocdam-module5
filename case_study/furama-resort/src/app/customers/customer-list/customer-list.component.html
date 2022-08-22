@@ -51,33 +51,32 @@
               <button class="btn btn-warning" [routerLink]="['/customers/customer-edit',c.id]">Edit</button>
             </td>
             <td>
-              <a class="btn btn-danger" [routerLink]="['/customers/customer-delete',c.id]">Delete</a>
-<!--              <button type="button" class="btn btn-primary" data-bs-toggle="modal"-->
-<!--                      data-bs-target="#deleteModal">-->
-<!--                Delete-->
-<!--              </button>-->
-
-<!--              &lt;!&ndash; Modal &ndash;&gt;-->
-<!--              <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"-->
-<!--                   aria-hidden="true">-->
-<!--                <div class="modal-dialog">-->
-<!--                  <div class="modal-content">-->
-<!--                    <div class="modal-header">-->
-<!--                      <h5 class="modal-title" id="exampleModalLabel">Delete customer</h5>-->
-<!--                      <button type="button" class="btn-close" data-bs-dismiss="modal"-->
-<!--                              aria-label="Close"></button>-->
-<!--                    </div>-->
-<!--                    <div class="modal-body">-->
-<!--                      Do you want delete customer <span>{{c.name}}</span>?-->
-<!--                    </div>-->
-<!--                    <div class="modal-footer">-->
-<!--                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                      <a class="btn btn-danger" [routerLink]="['/customers/customer-delete',c.id]">Delete</a>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </div>-->
+<!--              <a class="btn btn-danger" [routerLink]="['/customers/customer-delete',c.id]">Delete</a>-->
+              <button (click)="getDataForModal(c.id,c.name)" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#deleteModal">
+                Delete
+              </button>
             </td>
+            <!-- Modal -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Do you want delete customer <span>{{nameModal}}</span> with id {{idModal}} ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a class="btn btn-danger" data-bs-dismiss="modal" [routerLink]="['/customers/customer-delete',idModal]">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </thead>
         </table>
       </div>

@@ -10,16 +10,20 @@ import {CustomerService} from '../customer.service';
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
+
+  idModal: number;
+  nameModal: string;
   constructor(private customerService: CustomerService) {}
 
   ngOnInit(): void {
     this.getAll();
-    // this.loadList();
   }
    getAll() {
     this.customers = this.customerService.getAll();
   }
-  // loadList() {
-  //   this.customers = this.customerService.loadList();
-  // }
+  getDataForModal(id: number, name: string) {
+    this.idModal = id;
+    this.nameModal = name;
+  }
+
 }
