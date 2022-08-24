@@ -15,6 +15,10 @@
     {
       "name": "lg",
       "id": 4
+    },
+    {
+      "name": "hp",
+      "id": 5
     }
   ],
   "product": [
@@ -24,17 +28,18 @@
       "price": 340000,
       "description": "99%",
       "category": {
-        "id": 1,
-        "name": "iphone"
+        "id": 2,
+        "name": "samsung"
       }
     },
     {
+      "id": 2,
       "name": "S9+",
       "price": 898555,
       "description": "100%",
       "category": {
-        "id": "2",
-        "name": "samsung"
+        "id": 1,
+        "name": "iphone"
       }
     },
     {
@@ -42,9 +47,50 @@
       "price": 1201121,
       "description": "đẹp",
       "category": {
-        "id": "1",
+        "id": 1,
         "name": "iphone"
-      }
+      },
+      "id": 3
+    },
+    {
+      "name": "nokia",
+      "price": 21212,
+      "description": "100%",
+      "category": {
+        "id": 2,
+        "name": "samsung"
+      },
+      "id": 4
+    },
+    {
+      "name": "lg 999",
+      "price": 6776,
+      "description": "344",
+      "category": {
+        "id": 1,
+        "name": "iphone"
+      },
+      "id": 5
+    },
+    {
+      "name": "ss s9",
+      "price": 534,
+      "description": "okok",
+      "category": {
+        "id": 2,
+        "name": "samsung"
+      },
+      "id": 6
+    },
+    {
+      "name": "ip",
+      "price": 5444,
+      "description": "okok",
+      "category": {
+        "id": 1,
+        "name": "iphone"
+      },
+      "id": 7
     }
   ]
 }

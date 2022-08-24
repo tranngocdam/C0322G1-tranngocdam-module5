@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from '../customer';
 import {CustomerService} from '../customer.service';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -10,19 +11,33 @@ import {CustomerService} from '../customer.service';
 })
 export class CustomerListComponent implements OnInit {
   customers: Customer[] = [];
-
+  p = 1;
   idModal: number;
   nameModal: string;
-  constructor(private customerService: CustomerService) {}
+
+  constructor(private customerService: CustomerService) {
+  }
+  getDataForModal(c: Customer) {
+    this.idModal = c.id;
+    this.nameModal = c.name;
+
+  }
+
+  deleteCustomer(id: number) {
+    this.customerService.deleteCustomer(id).subscribe(() => {
+      this.getAll();
+    }, e => {
+      console.log(e);
+    });
+  }
 
   ngOnInit(): void {
     this.getAll();
   }
-   getAll() {
-    this.customers = this.customerService.getAll();
-  }
-  getDataForModal(id: number, name: string) {
-    this.idModal = id;
-    this.nameModal = name;
+
+  getAll() {
+    this.customerService.getAll().subscribe(customers => {
+      this.customers = customers;
+    });
   }
 }

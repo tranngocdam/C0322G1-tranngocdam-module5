@@ -91,21 +91,8 @@ export class FacilityService {
     numberOfFloods : 4 ,
     facilityFree : 'tiger beer',
     img : 'https://furamavietnam.com/wp-content/uploads/2018/08/DSC08265-1047x563.jpg'
-  }, {
-    id : 7,
-    name : 'LAGOON SUPERIOR',
-    area : '100m2',
-    cost : '1802$',
-    maxPeople : 7,
-    rentTypeId : {id : 2, name : 'month'},
-    facilityTypeId : {id : 1, name: 'room'},
-    standardRoom : 'normal',
-    descriptionOtherConvenience : 'có lò nướng',
-    poolArea : 41,
-    numberOfFloods : 4 ,
-    facilityFree : 'tiger beer',
-    img : 'https://furama-booking.com/wp-content/uploads/2021/10/Dat-Phong-Booking-Furama-Resort-Khach-San-Da-Nang-Villa-Biet-Thu-02-Phong-Ngu-Huong-Ho-Boi.jpg'
-  }];
+  }
+  ];
   constructor() { }
   getAll() {
     return this.facilitys;

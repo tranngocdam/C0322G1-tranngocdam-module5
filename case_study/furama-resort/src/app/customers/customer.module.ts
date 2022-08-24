@@ -6,15 +6,17 @@ import {CustomerRoutingModule} from './customer-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
 import {CustomerEditComponent} from './customer-edit/customer-edit.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [CustomerListComponent, CustomerCreateComponent, CustomerDeleteComponent, CustomerEditComponent],
-  imports: [
-    CommonModule,
-    CustomerRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        CustomerRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgxPaginationModule
+    ]
 })
 export class CustomerModule {
 

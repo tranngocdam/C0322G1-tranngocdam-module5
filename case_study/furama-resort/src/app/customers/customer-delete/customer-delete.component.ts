@@ -10,14 +10,17 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CustomerDeleteComponent implements OnInit {
   customerForm: FormGroup;
-  constructor(private customerService: CustomerService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) {}
+
+  constructor(
+    private customerService: CustomerService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
     const id = Number(this.activatedRoute.snapshot.params.id);
     this.customerService.deleteCustomer(id);
     this.router.navigateByUrl('customers/customer-list');
   }
-
 }

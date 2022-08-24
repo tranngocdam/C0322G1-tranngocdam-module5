@@ -6,6 +6,8 @@ import {FacilityService} from '../facility.service';
 import {RentTypeService} from '../rent-type.service';
 import {FacilityTypeService} from '../facility-type.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {CustomerType} from '../../customers/customerType';
 
 @Component({
   selector: 'app-facility-edit',
@@ -21,7 +23,8 @@ export class FacilityEditComponent implements OnInit {
               private rentTypeService: RentTypeService,
               private facilityTypeService: FacilityTypeService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
     const id = Number(this.activatedRoute.snapshot.params.id);
@@ -29,6 +32,7 @@ export class FacilityEditComponent implements OnInit {
     this.facilityTypes = this.facilityTypeService.getAll();
     this.rentTypes = this.rentTypeService.getAll();
     this.facilityForm = new FormGroup({
+      // id: new FormControl(facility.id),
       name: new FormControl(facility.name, [Validators.required]),
       area: new FormControl(facility.area, [Validators.required, Validators.pattern('^[0-9]{2,}$')]),
       cost: new FormControl(facility.cost, [Validators.required, Validators.pattern('^[0-9]{2,}$')]),
@@ -43,8 +47,22 @@ export class FacilityEditComponent implements OnInit {
       img: new FormControl(facility.img, [Validators.required])
     });
   }
-    onSubmit() {
+
+    onSubmit(): void {
       this.facilityService.updateFacility(this.facilityForm.value);
       this.router.navigateByUrl('facilitys/facility-list');
+      this.toastr.success('successfully!', 'Edit facility!');
     }
+
+  compareRentType(r1: RentType, r2: RentType) {
+    if ((r1 && r2) !== undefined) {
+      return r1.id === r2.id;
+    }
+  }
+
+  compareFacilityType(f1: FacilityType, f2: FacilityType) {
+    if ((f1 && f2) !== undefined) {
+      return f1.id === f2.id;
+    }
+  }
 }
