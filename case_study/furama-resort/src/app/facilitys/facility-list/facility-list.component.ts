@@ -8,7 +8,7 @@ import {FacilityService} from '../facility.service';
   styleUrls: ['./facility-list.component.css']
 })
 export class FacilityListComponent implements OnInit {
-  facility: Facility[] = [];
+  facilitys: Facility[] = [];
   idModal: number;
   nameModal: string;
   constructor(private facilityService: FacilityService) {
@@ -19,7 +19,9 @@ export class FacilityListComponent implements OnInit {
   }
 
   getAll() {
-    this.facility = this.facilityService.getAll();
+    this.facilityService.getAll().subscribe(facilitys => {
+      this.facilitys = facilitys;
+    });
   }
   getModal(id: number, name: string) {
     this.idModal = id;

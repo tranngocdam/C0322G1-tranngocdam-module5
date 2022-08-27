@@ -99,8 +99,6 @@ export class CustomerEditComponent implements OnInit {
 
   onSubmit(id: number) {
     const customer = this.customerForm.value;
-
-
     this.customerTypeService.findById(customer.customerType).subscribe(customerType => {
       customer.customerType = {
         id: customerType.id,

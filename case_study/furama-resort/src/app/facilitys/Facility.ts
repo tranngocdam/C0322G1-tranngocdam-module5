@@ -7,8 +7,8 @@ export interface Facility {
   area ?: string;
   cost ?: string;
   maxPeople ?: number;
-  rentTypeId ?: RentType;
-  facilityTypeId ?: FacilityType;
+  rentType ?: RentType;
+  facilityType ?: FacilityType;
   standardRoom ?: string;
   descriptionOtherConvenience ?: string;
   poolArea ?: number;

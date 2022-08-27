@@ -3,13 +3,14 @@
     <div style="width: 20%"></div>
     <div style="width: 60%">
       <h1 class="text-center my-1">Edit facility</h1>
-      <form [formGroup]="facilityForm" (ngSubmit)="onSubmit()" >
+      <form [formGroup]="facilityForm"(ngSubmit)="submit(id)">
+
       <table class="table table-striped">
         <thead>
         <tr>
           <th><label>Facility type</label></th>
-          <td><select class="form-select" formControlName="facilityTypeId" [compareWith]="compareFacilityType">
-            <option *ngFor="let f of facilityTypes" [ngValue]="f">{{f.name}}</option>
+          <td><select class="form-select" formControlName="facilityType" [compareWith]="compareFacilityType">
+            <option *ngFor="let f of facilityTypes" [value]="f.id">{{f.name}}</option>
           </select></td>
         </tr>
         <tr>
@@ -41,8 +42,8 @@
         </tr>
         <tr>
           <th><label>Rent type</label></th>
-          <td><select class="form-select" formControlName="rentTypeId" [compareWith]="compareRentType">
-            <option *ngFor="let r of rentTypes" [ngValue]="r">{{r.name}}</option>
+          <td><select class="form-select" formControlName="rentType" [compareWith]="compareRentType">
+            <option *ngFor="let r of rentTypes" [value]="r.id">{{r.name}}</option>
           </select></td>
         </tr>
 

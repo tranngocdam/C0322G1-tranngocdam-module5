@@ -8,10 +8,14 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar me-auto">
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="text" placeholder="Search">
-              <button class="btn btn-primary" type="button">Search</button>
-            </form>
+            <div style="display:flex;">
+              <select class="form-select" [(ngModel)]="name2">
+                <option [defaultSelected]="" value="" disabled>---Option customer type----</option>
+                <option *ngFor="let ct of customerType" [ngValue]="ct.name">{{ct.name}}</option>
+              </select>
+              <input class="form-control me-2" type="text" placeholder="Search" [(ngModel)]="name1">
+              <button class="btn btn-primary" type="button" (click)="searchCustomer()">Search</button>
+            </div>
           </div>
         </div>
       </nav>

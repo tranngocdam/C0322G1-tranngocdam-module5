@@ -14,9 +14,9 @@ export class FacilityDeleteComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    const id = Number(this.activatedRoute.snapshot.params.id);
-    this.facilityService.deleteFacility(id);
-    this.router.navigateByUrl('facilitys/facility-list');
+    // const id = Number(this.activatedRoute.snapshot.params.id);
+    // this.facilityService.deleteFacility(id);
+    // this.router.navigateByUrl('facilitys/facility-list');
   }
 
 }

@@ -1,8 +1,8 @@
 {
   "category": [
     {
-      "id": 1,
-      "name": "iphone"
+      "name": "apple",
+      "id": 1
     },
     {
       "id": 2,
@@ -17,20 +17,20 @@
       "id": 4
     },
     {
-      "name": "hp",
-      "id": 5
+      "name": "accer",
+      "id": 6
     }
   ],
   "product": [
     {
-      "id": 1,
       "name": "XSmax",
       "price": 340000,
       "description": "99%",
       "category": {
-        "id": 2,
-        "name": "samsung"
-      }
+        "id": 1,
+        "name": "iphone"
+      },
+      "id": 1
     },
     {
       "id": 2,
@@ -67,30 +67,10 @@
       "price": 6776,
       "description": "344",
       "category": {
-        "id": 1,
-        "name": "iphone"
+        "id": 4,
+        "name": "lg"
       },
       "id": 5
-    },
-    {
-      "name": "ss s9",
-      "price": 534,
-      "description": "okok",
-      "category": {
-        "id": 2,
-        "name": "samsung"
-      },
-      "id": 6
-    },
-    {
-      "name": "ip",
-      "price": 5444,
-      "description": "okok",
-      "category": {
-        "id": 1,
-        "name": "iphone"
-      },
-      "id": 7
     }
   ]
 }

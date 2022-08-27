@@ -1,0 +1,86 @@
+<div class="container-fluid mt-3">
+  <div class="container-fluid">
+    <div class="row">
+
+        <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+          <div class="container-fluid">
+            <a class="btn btn-primary" [routerLink]="['/create']">Tạo mới</a>
+            <h2 class="title">DANH SÁCH BỆNH ÁN</h2>
+            <div class="collapse navbar-collapse" id="mynavbar">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link"></a>
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+</div>
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div class="container table-responsive">
+      <table class="table table-striped table-hover table-bordered" style="text-align: center">
+        <thead>
+        <tr class="bg-info">
+          <td>STT</td>
+          <td>Mã bệnh án</td>
+          <td>Mã bệnh nhân</td>
+          <td>Tên bệnh nhân</td>
+          <td>Ngày nhập viện</td>
+          <td>Ngày xuất viện</td>
+          <td>Lý do</td>
+          <td>Phương pháp</td>
+          <td>Bác sĩ</td>
+          <td colspan="2">Action</td>
+        </tr>
+        <tr *ngFor="let c of benhans; index as i">
+          <td>{{i + 1}}</td>
+          <td>{{c.maBenhAn}}</td>
+          <td>{{c.benhNhan.maBenhNhan}}</td>
+          <td>{{c.benhNhan.tenBenhNhan}}</td>
+          <td>{{c.ngayNhapVien}}</td>
+          <td>{{c.ngayRaVien}}</td>
+          <td>{{c.liDo}}</td>
+          <td>{{c.phuongPhap}}</td>
+          <td>{{c.bacSi}}</td>
+          <td>Edit</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="getDataForModal(c)" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal">
+              Delete
+            </button>
+          </td>
+          <!-- Modal -->
+          <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+               aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Delete customer</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Do you want delete customer<p>{{idModal}}</p>?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <a class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteCustomer(idModal)">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
