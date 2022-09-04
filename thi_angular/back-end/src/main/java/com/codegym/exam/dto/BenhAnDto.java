@@ -1,32 +1,30 @@
-package com.codegym.exam.model;
+package com.codegym.exam.dto;
+import com.codegym.exam.model.MaBenhAn;
+import com.codegym.exam.model.MaBenhNhan;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import javax.validation.constraints.NotBlank;
 
-import javax.persistence.*;
-
-@Entity
-public class BenhAn {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BenhAnDto {
     private Integer id;
+    @NotBlank
     private String ngayNhapVien;
+    @NotBlank
     private String ngayRaVien;
+    @NotBlank
     private String liDo;
+    @NotBlank
     private String phuongPhap;
+    @NotBlank
     private String bacSi;
-    @ManyToOne
-    @JoinColumn(name = "benh_nhan_id", referencedColumnName = "id")
+    @NotBlank
     private MaBenhNhan maBenhNhan;
-
-    @ManyToOne
-    @JoinColumn(name = "benh_an_id", referencedColumnName = "id")
+    @NotBlank
     private MaBenhAn maBenhAn;
 
-    public BenhAn() {
+    public BenhAnDto() {
     }
 
-    public BenhAn(Integer id, String ngayNhapVien, String ngayRaVien, String liDo, String phuongPhap, String bacSi, MaBenhNhan maBenhNhan, MaBenhAn maBenhAn) {
+    public BenhAnDto(Integer id, String ngayNhapVien, String ngayRaVien, String liDo, String phuongPhap, String bacSi, MaBenhNhan maBenhNhan, MaBenhAn maBenhAn) {
         this.id = id;
         this.ngayNhapVien = ngayNhapVien;
         this.ngayRaVien = ngayRaVien;

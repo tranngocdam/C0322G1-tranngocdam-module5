@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {BenhNhan} from '../../model/benh-nhan';
-import {BenhAn} from '../../model/benh-an';
+import {MaBenhNhan} from '../../model/ma-benh-nhan';
+import {MaBenhAn} from '../../model/ma-benh-an';
 import {BenhAnService} from '../../service/benh-an.service';
-import {BenhNhanService} from '../../service/benh-nhan.service';
+import {MaBenhAnService} from '../../service/ma-benh-an.service';
+import {MaBenhNhanService} from '../../service/ma-benh-nhan.service';
+import {BenhAn} from '../../model/benh-an';
 
 @Component({
   selector: 'app-benhan-list',
@@ -10,33 +12,51 @@ import {BenhNhanService} from '../../service/benh-nhan.service';
   styleUrls: ['./benhan-list.component.css']
 })
 export class BenhanListComponent implements OnInit {
-  benhnhans: BenhNhan[] = [];
-  benhans: BenhAn [] = [];
-
+  maBenhNhans: MaBenhNhan[] = [];
+  maBenhAns: MaBenhAn [] = [];
+  benhAn: BenhAn[] = [];
+  liDo1 = '';
+  p = 1;
   constructor(private benhAnService: BenhAnService,
-              private benhNhanService: BenhNhanService) {
-  }
-  idModal: string;
-  ngOnInit(): void {
-    this.getAll();
+              private maBenhAnService: MaBenhAnService,
+              private maBenhNhanService: MaBenhNhanService) {
   }
 
-  getAll() {
-    this.benhAnService.getAll().subscribe(benhAn => {
-      this.benhans = benhAn;
+  idModal: number;
+  nameModal: string;
+
+  ngOnInit(): void {
+    this.getAll(0);
+  }
+
+  getAll(page: number) {
+    this.benhAnService.getAll(page).subscribe(benhAn => {
+      this.benhAn = benhAn;
     });
-    this.benhNhanService.getAll().subscribe(benhnhan => {
-      this.benhnhans = benhnhan;
+    this.maBenhAnService.getAll().subscribe(maBenhAn => {
+      this.maBenhAns = maBenhAn;
+    });
+    this.maBenhNhanService.getAll().subscribe(maBenhNhan => {
+      this.maBenhNhans = maBenhNhan;
     });
   }
-  deleteCustomer(id: string) {
+
+  deleteCustomer(id: number) {
     this.benhAnService.deleteCustomer(id).subscribe(() => {
-      this.getAll();
+      this.getAll(0);
     }, e => {
       console.log(e);
     });
   }
+
   getDataForModal(c: BenhAn) {
-    this.idModal = c.maBenhAn;
+    this.idModal = c.id;
+    this.nameModal = c.maBenhAn.name;
+  }
+
+  searchliDoBenhAn() {
+    return this.benhAnService.searchBenhAn(this.liDo1).subscribe(listSearch => {
+      this.benhAn = listSearch;
+    });
   }
 }

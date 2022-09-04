@@ -2,18 +2,22 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {BenhanListComponent} from './benhAn/benhan-list/benhan-list.component';
-import {BenhanCreatComponent} from './benhAn/benhan-creat/benhan-creat.component';
+import {BenhanCreateComponent} from './benhAn/benhan-create/benhan-create.component';
+import {HeaderComponent} from './header/header.component';
+
 
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'list'
+    path: '', pathMatch: 'full', redirectTo: 'header'
   },
   {
-    path: 'list', component: BenhanListComponent
-  }, {
-    path: 'create', component: BenhanCreatComponent
-  }
+    path: 'header', component: HeaderComponent
+  },
+  {
+    path: 'benhAn',
+    loadChildren: () => import('./benhAn/benhan.module').then(module => module.BenhanModule)
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BenhanCreatComponent } from './benhan-creat.component';
+import { BenhanCreatComponent } from './benhan-create.component';
 
 describe('BenhanCreatComponent', () => {
   let component: BenhanCreatComponent;

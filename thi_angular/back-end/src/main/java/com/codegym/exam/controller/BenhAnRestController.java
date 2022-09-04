@@ -2,18 +2,14 @@ package com.codegym.exam.controller;
 
 import com.codegym.exam.model.BenhAn;
 import com.codegym.exam.service.BenhAnService;
-import com.codegym.exam.service.BenhNhanService;
-import com.codegym.exam.service.impl.IBenhAnServiceImpl;
-import com.codegym.exam.service.impl.IBenhNhanServiceImpl;
+import com.codegym.exam.service.MaBenhNhanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/benhan")
@@ -21,11 +17,9 @@ import java.util.List;
 public class BenhAnRestController {
     @Autowired
     private BenhAnService benhAnService;
-    @Autowired
-    private BenhNhanService benhNhanService;
 
-    @GetMapping("")
-    public ResponseEntity<Page<BenhAn>> findAllBenhAn(Pageable pageable) {
+    @GetMapping("/page")
+    public ResponseEntity<Page<BenhAn>> findAllBenhAn(@PageableDefault(value = 5) Pageable pageable) {
         Page<BenhAn> benhAnPage = benhAnService.findAll(pageable);
         if (benhAnPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -33,25 +27,33 @@ public class BenhAnRestController {
         return new ResponseEntity<>(benhAnPage, HttpStatus.OK);
     }
 
-    @GetMapping("/{maBenhAn}")
-    public ResponseEntity<BenhAn> findByMaBenhAn(@PathVariable String maBenhAn) {
-        BenhAn benhAn = benhAnService.findByBenhAn(maBenhAn);
+    @PostMapping("/create")
+    public ResponseEntity<BenhAn> saveBenhAn(@RequestBody BenhAn benhAn) {
+        benhAnService.save(benhAn);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/find/{id}")
+    public ResponseEntity<BenhAn> findByIdBenhAn(@PathVariable Integer id) {
+        BenhAn benhAn = benhAnService.findByBenhAn(id);
         return new ResponseEntity<>(benhAn, HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<BenhAn> saveBenhAn(@RequestBody BenhAn benhAn) {
-        benhAnService.save(benhAn);
-        return new ResponseEntity<>( HttpStatus.CREATED);
-    }
-    @PatchMapping("/editBenhAn")
-    public ResponseEntity<BenhAn> editBenhAn(@RequestBody BenhAn benhAn){
+    @PatchMapping("/edit/{id}")
+    public ResponseEntity<BenhAn> editBenhAn(@RequestBody BenhAn benhAn) {
        benhAnService.editBenhAn(benhAn);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @DeleteMapping("/benhan")
-    public ResponseEntity<BenhAn> deleteBenhAn(@RequestParam String maBenhAn){
-        benhAnService.deleteBenhAn(maBenhAn);
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<BenhAn> deleteBenhAn(@PathVariable Integer id){
+        benhAnService.deleteBenhAn(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @GetMapping("/search")
+    public ResponseEntity<Page<BenhAn>> searchPatient(@RequestParam String liDo,
+                                                       @PageableDefault(value = 2) Pageable pageable) {
+        Page<BenhAn> benhAnPage = benhAnService.findBenhAnByLiDo(liDo, pageable);
+        return new ResponseEntity<>(benhAnPage, HttpStatus.OK);
     }
 }

@@ -107,7 +107,7 @@ export class CustomerEditComponent implements OnInit {
       this.customerService.editCustomer(id, customer).subscribe(() => {
         alert('Sửa thành công');
         this.router.navigateByUrl('customer-list');
-      });
+      }, e => console.log(e));
     });
   }
 

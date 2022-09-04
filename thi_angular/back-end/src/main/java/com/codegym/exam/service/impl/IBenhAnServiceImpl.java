@@ -8,7 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class IBenhAnServiceImpl implements BenhAnService {
@@ -22,18 +21,18 @@ public class IBenhAnServiceImpl implements BenhAnService {
 
     @Override
     public void save(BenhAn benhAn) {
-        iBenhAnRepository.saveBenhAn(benhAn.getMaBenhAn(), benhAn.getBacSi(), benhAn.getLiDo(), benhAn.getNgayNhapVien(), benhAn.getNgayRaVien(),
-                benhAn.getPhuongPhap(), benhAn.getBenhNhan());
+        iBenhAnRepository.saveBenhAn(benhAn.getBacSi(), benhAn.getLiDo(), benhAn.getNgayNhapVien(),
+                benhAn.getNgayRaVien(), benhAn.getPhuongPhap(), benhAn.getMaBenhNhan(), benhAn.getMaBenhAn());
     }
 
     @Override
-    public BenhAn findByBenhAn(String maBenhAn) {
-        return iBenhAnRepository.findByBenhAn(maBenhAn);
+    public BenhAn findByBenhAn(Integer id) {
+        return iBenhAnRepository.findByIdBenhAn(id);
     }
 
     @Override
-    public void deleteBenhAn(String maBenhAn) {
-        iBenhAnRepository.deleteBenhAn(maBenhAn);
+    public void deleteBenhAn(Integer id) {
+        iBenhAnRepository.deleteBenhAn(id);
     }
 
     @Override
@@ -42,7 +41,8 @@ public class IBenhAnServiceImpl implements BenhAnService {
     }
 
     @Override
-    public Page<BenhAn> findBenhAnByBenhNhan(String name, Pageable pageable) {
-        return iBenhAnRepository.findBenhAnByBenhNhan("%"+ name + "%", pageable);
+    public Page<BenhAn> findBenhAnByLiDo(String liDo, Pageable pageable) {
+        return iBenhAnRepository.findBenhAnByLiDo("%"+ liDo+"%", pageable);
     }
+
 }

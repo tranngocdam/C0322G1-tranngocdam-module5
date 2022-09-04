@@ -1,11 +1,14 @@
-import {BenhNhan} from './benh-nhan';
+import {MaBenhNhan} from './ma-benh-nhan';
+import {MaBenhAn} from './ma-benh-an';
 
 export interface BenhAn {
-  maBenhAn ?: string;
-  benhNhan ?: BenhNhan;
-  ngayNhapVien ?: string;
-  ngayRaVien ?: string;
-  liDo ?: string;
-  phuongPhap ?: string;
-  bacSi ?: string;
+  id ?: number;
+  maBenhAn?: MaBenhAn;
+  maBenhNhan?: MaBenhNhan;
+  tenBenhNhan ?: string;
+  ngayNhapVien?: string;
+  ngayRaVien?: string;
+  liDo?: string;
+  phuongPhap?: string;
+  bacSi?: string;
 }

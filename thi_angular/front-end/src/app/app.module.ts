@@ -9,15 +9,14 @@ import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import { BenhanListComponent } from './benhAn/benhan-list/benhan-list.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { BenhanCreatComponent } from './benhAn/benhan-creat/benhan-creat.component';
+import {BenhanCreateComponent} from './benhAn/benhan-create/benhan-create.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BenhanListComponent,
-    BenhanCreatComponent
   ],
   imports: [
     BrowserModule,

@@ -4,25 +4,19 @@
 
         <nav class="navbar navbar-expand-sm navbar-dark bg-success">
           <div class="container-fluid">
-            <a class="btn btn-primary" [routerLink]="['/create']">Tạo mới</a>
+            <a class="btn btn-primary" [routerLink]="['/benhAn/benhan-create']">Tạo mới</a>
             <h2 class="title">DANH SÁCH BỆNH ÁN</h2>
             <div class="collapse navbar-collapse" id="mynavbar">
-              <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                  <a class="nav-link"></a>
-                </li>
-                <li class="nav-item">
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link"></a>
-                </li>
-              </ul>
+              <ul class="navbar-nav me-auto">  </ul>
+                <div style="display:flex">
+                  <input class="form-control me-2" type="text" placeholder="Search" [(ngModel)]="liDo1">
+                  <button class="btn btn-primary" type="button" (click)="searchliDoBenhAn()">Search</button>
+                </div>
             </div>
           </div>
         </nav>
       </div>
     </div>
-
 </div>
 <div class="container-fluid mt-3">
   <div class="row">
@@ -41,17 +35,19 @@
           <td>Bác sĩ</td>
           <td colspan="2">Action</td>
         </tr>
-        <tr *ngFor="let c of benhans; index as i">
+        <tr *ngFor="let c of benhAn| paginate:{itemsPerPage: 3, currentPage: p}; index as i">
           <td>{{i + 1}}</td>
-          <td>{{c.maBenhAn}}</td>
-          <td>{{c.benhNhan.maBenhNhan}}</td>
-          <td>{{c.benhNhan.tenBenhNhan}}</td>
+          <td>{{c.maBenhAn.name}}</td>
+          <td>{{c.maBenhNhan.name}}</td>
+          <td>{{c.tenBenhNhan}}</td>
           <td>{{c.ngayNhapVien}}</td>
           <td>{{c.ngayRaVien}}</td>
           <td>{{c.liDo}}</td>
           <td>{{c.phuongPhap}}</td>
           <td>{{c.bacSi}}</td>
-          <td>Edit</td>
+          <td>
+            <button class="btn btn-warning" [routerLink]="['/benhAn/benhan-edit',c.id]">Edit</button>
+          </td>
           <td>
             <button type="button" class="btn btn-primary" (click)="getDataForModal(c)" data-bs-toggle="modal"
                     data-bs-target="#deleteModal">
@@ -69,7 +65,7 @@
                           aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  Do you want delete customer<p>{{idModal}}</p>?
+                  Bạn có muốn xóa bệnh án có id<p>{{idModal}}</p> và mã bệnh án<p>{{nameModal}}</p>?
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -82,5 +78,8 @@
         </thead>
       </table>
     </div>
+  </div>
+  <div class="container" style="display: flex;justify-content: center;margin-top: 10px">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>
